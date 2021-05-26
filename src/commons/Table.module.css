@@ -1,0 +1,9 @@
+.table {
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+.table_container {
+	position: absolute;
+	width: 100%;
+}

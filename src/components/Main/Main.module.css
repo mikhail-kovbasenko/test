@@ -1,0 +1,40 @@
+.main {
+	padding: 5px;
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	background-color: gainsboro;
+}
+.content {
+	width: 100%;
+	overflow: auto;
+	display: flex;
+	flex-grow: 1;
+}
+.panel {
+	margin-bottom: 20px;
+	padding-top: 10px;
+	display: flex;
+}
+.select_year {
+	display: flex;
+	margin-right: 20px;
+	align-items: center;
+}
+.panel label {
+	margin-right: 15px;
+	font-size: 1.2rem;
+}
+.title {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.search_input, .filter {
+	display: flex;
+	align-items: center;
+}
+.filter div:first-of-type {
+	margin-right: 10px;
+}

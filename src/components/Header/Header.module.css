@@ -1,0 +1,32 @@
+.header {
+	background-color: darkslategray;
+	padding: 10px;
+}
+.header_content {
+	display: flex;
+}
+.header_logo {
+
+}
+.header_img {
+	width: 80px;
+}
+.header_nav {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+.header_nav_content {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+.header_nav_item a {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	color: white;
+}
+.header_nav_item a:hover,
+.header_nav_item a.active {
+	color: red;
+}
