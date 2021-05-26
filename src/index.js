@@ -6,7 +6,7 @@ import { BrowserRouter, HashRouter } from 'react-router-dom';
 import AppContainer from './AppContainer';
 
 ReactDOM.render(
-  <HashRouter>
+  <HashRouter basename={`/test`}>
 	 <React.StrictMode>
       <AppContainer/>
     </React.StrictMode>
