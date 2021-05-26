@@ -6,11 +6,11 @@ import { BrowserRouter, HashRouter } from 'react-router-dom';
 import AppContainer from './AppContainer';
 
 ReactDOM.render(
-  <HashRouter basename={`/test`}>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
 	 <React.StrictMode>
       <AppContainer/>
     </React.StrictMode>
-  </HashRouter>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 reportWebVitals();

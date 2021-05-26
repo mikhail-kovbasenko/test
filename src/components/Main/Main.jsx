@@ -155,7 +155,7 @@ const Main = props => {
 			</div>
 			<div className={style.title}>{title}</div>
 			<div className={style.content}>
-				<Route path="/leagues_list" render={getLeaguesList}/>
+				<Route exact path="/" render={getLeaguesList}/>
 				<Route path="/teams_list/:league_id" render={getTeamsList}/>
 				<Route path="/league_calendar/:league_id" render={getLeagueCalendar}/>
 				<Route path="/team_calendar/:league_id/:team_id" render={getTeamCalendar}/>
