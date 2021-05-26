@@ -82,15 +82,15 @@ const Main = props => {
 
 	if(props.history.location.pathname === '/leagues_list' && title !== 'Leagues List') setTitle('Leagues List');
 
-	// if(!season) {
-	// 	const currentYear = new Date().getFullYear() - 1;
-	// 	const pathname = `/leagues_list?season=${currentYear}`;
+	if(!season) {
+		const currentYear = new Date().getFullYear() - 1;
+		const pathname = `/leagues_list?season=${currentYear}`;
 		
-	// 	setReturnSrc(pathname);
-	// 	setSeason(currentYear);
+		setReturnSrc(pathname);
+		setSeason(currentYear);
 
-	// 	props.history.push(pathname);
-	// }
+		props.history.push(pathname);
+	}
 
 	return (
 		<div className={style.main}>
@@ -155,7 +155,7 @@ const Main = props => {
 			</div>
 			<div className={style.title}>{title}</div>
 			<div className={style.content}>
-				<Route exact path="/" render={getLeaguesList}/>
+				<Route path="/leagues_list" render={getLeaguesList}/>
 				<Route path="/teams_list/:league_id" render={getTeamsList}/>
 				<Route path="/league_calendar/:league_id" render={getLeagueCalendar}/>
 				<Route path="/team_calendar/:league_id/:team_id" render={getTeamCalendar}/>
