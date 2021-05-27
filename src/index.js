@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import {HashRouter } from 'react-router-dom';
 import AppContainer from './AppContainer';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
 	 <React.StrictMode>
       <AppContainer/>
     </React.StrictMode>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
 reportWebVitals();
