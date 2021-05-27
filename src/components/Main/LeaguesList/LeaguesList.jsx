@@ -1,15 +1,11 @@
-import axios from 'axios';
 import { NavLink } from 'react-router-dom';
-import { api } from '../../../api/api';
 import Table from '../../../commons/Table';
-import Context from '../../../AppContainer';
-import style from './LeaguesList.module.css';
-import { getPathName } from '../../../utils/getpathname';
+
 
 const LeaguesList = props => {
 	if (!props.data.competitions) return null;
 	
-	const titles = ['Name', 'Country', 'Country Info', 'Last Update', 'Calendar', 'Teams'];
+	const titles = ['Name', 'Country', 'Flag', 'Last Update', 'Calendar', 'Teams'];
 	
 	return (
 				
@@ -42,13 +38,10 @@ const LeaguesList = props => {
 										}
 									</td>
 									<td>
-										<NavLink to={`/league_calendar/${league.id}?season=${props.season}`} className="button">SHOW CALENDAR</NavLink>
-								
+										<NavLink to={`/league_calendar/${league.id}?season=${props.season}`} className="button">SHOW CALENDAR</NavLink>								
 									</td>
 									<td>	
-										
-										<NavLink to={`/teams_list/${league.id}?season=${props.season}`} className="button" onClick={() => props.setSearch('')}>SHOW TEAMS</NavLink>
-												
+										<NavLink to={`/teams_list/${league.id}?season=${props.season}`} className="button" onClick={() => props.setSearch('')}>SHOW TEAMS</NavLink>										
 									</td>
 								</tr>
 							)

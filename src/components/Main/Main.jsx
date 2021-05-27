@@ -27,20 +27,15 @@ const Main = props => {
 				const seasonParam = param === 'season' ? value : season;
 				const searchParam = param === 'search' ? value : search;
 				url = `${props.location.pathname}?season=${seasonParam}&search=${searchParam}`;
-
-				//setReturnSrc(`/leagues_list?season=${seasonParam}`);
 			}; break;
 			case '/league_calendar':
 			case '/team_calendar': {
 				const seasonParam = param === 'season' ? value : season;
 				const fromParam = param === 'from' ? value : fromFilter;
 				const toParam = param === 'to' ? value : toFilter;
-
 				url = `${props.location.pathname}?season=${seasonParam}&from=${fromParam}&to=${toParam}`;
 
-				// name === '/league_calendar'
-				// ? setReturnSrc(`/leagues_list?season=${seasonParam}`)
-				// : setReturnSrc(`/teams_list/?season=${seasonParam}`)
+				setReturnSrc(`${pathname}?season=${seasonParam}`);
 			}
 			break;
 		}
@@ -76,7 +71,7 @@ const Main = props => {
 			case 'from': setFilterFrom(value); break;
 			case 'to': setFilterTo(value); break;
 		}
-		console.log(name, value);
+		
 		changeUrl(name, value);
 	}
 

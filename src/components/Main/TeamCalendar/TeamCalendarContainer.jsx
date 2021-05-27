@@ -31,6 +31,8 @@ const TeamCalendarContainer = props => {
 				})
 			})
 		})()
+		//props.setReturnSrc('/leagues_list?season=' + props.season);
+		props.setReturnSrc(`/teams_list/${league_id}?season=${props.season}`);
 	}, [props.season])
 	return state.matches && state.season === props.season
 			 ? <TeamCalendar state={state} filter={filterData}/>

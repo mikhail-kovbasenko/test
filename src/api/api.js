@@ -11,7 +11,6 @@ export const api = {
 	getLeagues() {
 		return instance.get(`competitions/`).then(response => {
 			if(response.request.readyState === 4) {
-				console.log(response.data);	
 				return response.data;
 			}
 		})
@@ -29,12 +28,5 @@ export const api = {
 				return response.data;
 			}
 		})
-	},
-	// getAllMatchesByTeam(id) {
-	// 	return instance.get(`teams/${id}/matches`).then(response => {
-	// 		if(response.request.readyState === 4) {
-	// 			return response.data;
-	// 		}
-	// 	});
-	// }
+	}
 }

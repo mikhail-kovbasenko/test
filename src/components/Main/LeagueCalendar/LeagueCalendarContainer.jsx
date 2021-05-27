@@ -25,6 +25,7 @@ const LeagueCalendarContainer = props => {
 				props.changeTitle(competition.name);
 			})
 		})()
+		props.setReturnSrc('/leagues_list?season=' + props.season);
 	}, [props.season]);
 	return state.count < 1 || state.season !== props.season
 		    ? <Preloader/>

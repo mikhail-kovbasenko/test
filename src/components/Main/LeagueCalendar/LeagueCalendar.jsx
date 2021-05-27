@@ -29,7 +29,7 @@ const LeagueCalendar = props => {
 			)
 
 		} 
-		//console.log(matchday);
+
 		if(filter) {
 			rows.push(
 				<tr key={match.id}>
@@ -46,7 +46,6 @@ const LeagueCalendar = props => {
 			)
 		}
 	})
-	//console.log(rows);
 	return (
 		<Table titles={titles}>
 			{rows}

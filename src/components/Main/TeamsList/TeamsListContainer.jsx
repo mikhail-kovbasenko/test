@@ -16,8 +16,6 @@ const TeamsListContainer = props => {
 	const league_id = +props.match.params.league_id;
 	const season = +query.parse(props.location.search).season;
 
-	console.log(league_id, season);
-
 	useEffect(() => {
 		(async () => {
 			api.getTeamsByLeague(league_id, season).then(({competition, teams, season, count}) => {
@@ -25,6 +23,7 @@ const TeamsListContainer = props => {
 				props.changeTitle(competition.name);
 			});
 		})()
+		props.setReturnSrc('/leagues_list?season=' + season);
 	}, [season])
 
 	return state.count < 1 

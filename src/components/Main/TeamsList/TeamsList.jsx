@@ -4,7 +4,6 @@ import Table from "../../../commons/Table";
 const TeamsList = props => {
 	const titles = ['№', 'Name', 'Logo', 'Venue', 'Phone', 'Web Site', 'Address', 'Calendar'];
 	
-	console.log(props.data.teams);
 	return (
 		<Table titles={titles}>
 			{
