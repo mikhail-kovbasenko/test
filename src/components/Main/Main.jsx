@@ -79,7 +79,7 @@ const Main = props => {
 
 	if(!season) {
 		const currentYear = new Date().getFullYear() - 1;
-		const pathname = `#/leagues_list?season=${currentYear}`;
+		const pathname = `/leagues_list?season=${currentYear}`;
 		
 		setReturnSrc(pathname);
 		setSeason(currentYear);
