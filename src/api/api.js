@@ -28,5 +28,12 @@ export const api = {
 				return response.data;
 			}
 		})
+	},
+	getTeamById(id) {
+		return instance.get(`teams/${id}`).then(response => {
+			if(response.request.readyState === 4) {
+				return response.data;
+			}
+		})
 	}
 }

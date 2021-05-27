@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, withRouter } from 'react-router';
 import { getPathName } from '../../utils/getpathname';
 import LeagueCalendarContainer from './LeagueCalendar/LeagueCalendarContainer';
@@ -59,6 +59,7 @@ const Main = props => {
 	const getTeamCalendar = () => <TeamCalendarContainer season={season}  
 																	     filterFrom={fromFilter} 
 																		  filterTo={toFilter}
+																		  changeTitle={changeTitle}
 																		  setReturnSrc={setReturnSrc}/>;
 
 	const onChangeField = event => {
@@ -77,7 +78,9 @@ const Main = props => {
 
 	if(props.history.location.pathname === '/leagues_list' && title !== 'Leagues List') setTitle('Leagues List');
 
-	if(!season) {
+	useEffect(() => {
+		if(!season) return;
+
 		const currentYear = new Date().getFullYear() - 1;
 		const pathname = `/leagues_list?season=${currentYear}`;
 		
@@ -85,7 +88,7 @@ const Main = props => {
 		setSeason(currentYear);
 
 		props.history.push(pathname);
-	}
+	}, [season])
 
 	return (
 		<div className={style.main}>

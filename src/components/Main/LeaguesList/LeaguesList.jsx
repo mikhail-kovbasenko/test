@@ -1,14 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import Table from '../../../commons/Table';
 
-
 const LeaguesList = props => {
 	if (!props.data.competitions) return null;
 	
 	const titles = ['Name', 'Country', 'Flag', 'Last Update', 'Calendar', 'Teams'];
 	
-	return (
-				
+	return (			
 				<Table titles={titles}>
 					{
 						props.data.competitions.map(league => {

@@ -10,6 +10,7 @@ const TeamCalendarContainer = props => {
 		matches: null,
 		season: null
 	});
+	const [name, setName] = useState('');
 	const filterData = {
 		from: props.filterFrom ? new Date(props.filterFrom) : null,
 		to: props.filterTo ? new Date(props.filterTo) : null
@@ -29,9 +30,11 @@ const TeamCalendarContainer = props => {
 					matches: filterMatchesByTeam(data.matches, +team_id),
 					season: props.season
 				})
+				return api.getTeamById(team_id);
+			}).then(data => {
+				props.changeTitle(data.name);
 			})
 		})()
-		//props.setReturnSrc('/leagues_list?season=' + props.season);
 		props.setReturnSrc(`/teams_list/${league_id}?season=${props.season}`);
 	}, [props.season])
 	return state.matches && state.season === props.season

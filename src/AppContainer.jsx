@@ -6,7 +6,7 @@ const query = require('query-string');
 
 const AppContainer = props => {
 	const {
-		season: seasonParam = null,
+		season: seasonParam = '',
 		search: searchParam = '',
 		from = '',
 		to = ''
