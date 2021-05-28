@@ -79,7 +79,7 @@ const Main = props => {
 	if(props.history.location.pathname === '/leagues_list' && title !== 'Leagues List') setTitle('Leagues List');
 
 	useEffect(() => {
-		if(!season) return;
+		if(season !== '') return;
 
 		const currentYear = new Date().getFullYear() - 1;
 		const pathname = `/leagues_list?season=${currentYear}`;
